@@ -4,6 +4,8 @@ Board board;
 
 KomaList komaList;
 
+GameStatus gs;
+
 
 
 void setup() {
@@ -12,6 +14,9 @@ void setup() {
    board = new Board();
    
    komaList = new KomaList();
+  
+   gs = new GameStatus();
+
   
 }
 
@@ -22,4 +27,10 @@ void draw() {
   komaList.draw();
 
 
+}
+
+void mouseReleased() {
+  int x = mouseX/SQUARESIZE;
+  int y = mouseY/SQUARESIZE;
+  board.select(x, y);
 }
